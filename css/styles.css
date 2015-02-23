@@ -320,11 +320,22 @@ table {
 td, th {
   padding: 0; }
 
+@font-face {
+  font-family: 'PressStart';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Press Start 2P'), local('PressStart2P-Regular'), url(http://themes.googleusercontent.com/static/fonts/pressstart2p/v2/8Lg6LX8-ntOHUQnvQ0E7o3dD2UuwsmbX3BOp4SL_VwM.woff) format('woff'); }
+
+* {
+  box-sizing: border-box; }
+
 body {
-  background-color: #000; }
+  background-color: #000;
+  color: #15abc3;
+  font-family: PressStart, "Bitstream Vera Sans Mono", monospace; }
 
 .head {
-  background: url(../img/pixel-planet.png) no-repeat fixed -50px -50px, url(../img/bg-stars.png) repeat-x fixed -130% 0, url(../img/space-bg.png) repeat-x fixed -80% 0, url(../img/clouds.png) repeat-x fixed 100% 0; }
+  background: url(../img/pixel-planet.png) no-repeat fixed -50px -50px; }
 
 .tagline {
   overflow: hidden;
@@ -332,39 +343,59 @@ body {
   white-space: nowrap;
   background: url(../img/tagline.png) no-repeat;
   height: 160px;
-  margin: 2em auto;
+  margin: 2em auto .5em;
   text-align: center;
   width: 565px; }
 
+.ui-starfield {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1; }
+
+.load-date {
+  color: #fff;
+  display: inline-block;
+  font-size: .75em;
+  margin: 15px 0 0;
+  text-transform: uppercase;
+  vertical-align: top; }
+
+.load-title {
+  color: #fff;
+  font-size: 1.125em;
+  margin: 30px 0; }
+
 .progress {
-  position: relative; }
+  position: relative;
+  text-align: center; }
 
 .progress-bar {
-  width: 600px;
-  height: 40px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -300px;
-  margin-top: -50px;
+  display: inline-block;
+  width: 304px;
+  height: 44px;
   background: black;
   border: 2px solid white;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.2); }
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2); }
 
 .main-bar {
-  width: 200px;
+  width: 100px;
   height: 40px;
   background: #92C81A;
   float: left;
-  animation: stretch 5s infinite linear; }
+  animation: stretch 8s infinite linear; }
 
 .row-bar {
   height: 10px;
-  width: 400px;
+  width: 200px;
   float: left;
   display: inherit;
-  animation: squeeze 5s infinite linear; }
+  animation: squeeze 8s infinite linear; }
 
 .sq {
   height: 10px;
@@ -391,54 +422,52 @@ body {
 
 @keyframes stretch {
   0% {
+    width: 100px; }
+
+  25% {
+    width: 140px; }
+
+  50% {
+    width: 180px; }
+
+  75% {
+    width: 140px; }
+
+  100% {
+    width: 100px; } }
+
+@keyframes squeeze {
+  0% {
     width: 200px; }
 
   25% {
-    width: 280px; }
+    width: 160px; }
 
   50% {
-    width: 360px; }
+    width: 120px; }
 
   75% {
-    width: 240px; }
+    width: 160px; }
 
   100% {
     width: 200px; } }
 
-@keyframes squeeze {
-  0% {
-    width: 400px; }
-
-  25% {
-    width: 320px; }
-
-  50% {
-    width: 140px; }
-
-  75% {
-    width: 360px; }
-
-  100% {
-    width: 400px; } }
-
-.sponsors {
-  background: #fff;
-  padding: 1em 2em; }
-
-.spon-list {
-  list-style: none; }
+.results {
+  margin: 2em 0 0;
+  padding: 0; }
 
 .results-item {
+  background: #6fff00;
   display: inline-block;
-  font-size: 0.875em;
+  font-size: .875em;
   line-height: 1.325;
-  margin-bottom: 2em;
+  margin: 1%;
+  padding: 15px;
   vertical-align: top;
-  width: 25%; }
+  width: 23%; }
   .results-item:hover .title {
     opacity: 1; }
   .results-item a {
-    background: url(../img/pixel-trame.png) 0 0;
     display: block;
     position: relative;
     text-decoration: none; }
@@ -446,16 +475,17 @@ body {
     display: block;
     width: 100%; }
   .results-item .date {
-    color: #f2f2f2;
+    color: #000;
     display: block;
-    font-size: 0.875em;
+    font-size: .75em;
     font-weight: bold;
-    padding: 5px; }
+    padding: 15px 5px 0; }
   .results-item .title {
     background: rgba(255, 255, 255, 0.8);
     bottom: 0;
-    color: #555;
+    color: #000;
     display: block;
+    font-size: .75em;
     left: 0;
     opacity: 0;
     overflow: hidden;
@@ -464,6 +494,23 @@ body {
     right: 0;
     top: 0;
     word-break: break-word; }
+
+.sponsors {
+  background: #fff;
+  padding: 1em 2em; }
+
+.spon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.spon-list-item {
+  display: inline-block;
+  max-width: 280px;
+  vertical-align: middle; }
+  .spon-list-item img {
+    height: auto;
+    width: 100%; }
 
 .group {
   margin: 0 auto;

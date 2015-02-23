@@ -19,15 +19,15 @@ module.exports = function (grunt) {
             }
         },
 
-        scsslint: { 
-            allFiles: [ 
-              'sass/**/*.scss', 
-            ], 
-            options: { 
-              config: '.scss-lint.yml', 
-              reporterOutput: 'scss-lint-report.xml', 
-              colorizeOutput: true 
-            }, 
+        scsslint: {
+            allFiles: [
+              'sass/**/*.scss',
+            ],
+            options: {
+              config: '.scss-lint.yml',
+              reporterOutput: 'scss-lint-report.xml',
+              colorizeOutput: true
+            },
         },
 
         postcss: {
@@ -63,9 +63,21 @@ module.exports = function (grunt) {
             }
         },
 
+        browserSync: {
+            bsFiles: {
+                src : ['css/**/*.css', 'js/**/*.js', '*.html']
+            },
+            options: {
+                watchTask: true,
+                server: {
+                    baseDir: "./"
+                }
+            }
+        }
+
 
     });
 
-    grunt.registerTask('default', ['sass:dist', 'watch']);
+    grunt.registerTask('default', ['browserSync','sass:dist', 'watch']);
     grunt.registerTask('prod', ['sass:prod', 'postcss']);
 };
