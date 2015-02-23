@@ -1,0 +1,9 @@
+.group {
+	margin: 0 auto;
+	max-width: 1400px;
+	width: 90%;
+}
+
+.section {
+	@include micro-clearfix;
+}

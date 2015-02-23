@@ -1,0 +1,54 @@
+.sponsors {
+    background: $white;
+    padding: 1em 2em;
+}
+
+.spon-list {
+    list-style: none;
+}
+
+.results-item {
+    display: inline-block;
+    font-size: .875em;
+    line-height: 1.325;
+    margin-bottom: 2em;
+    vertical-align: top;
+    width: 25%;
+    
+    &:hover {
+        .title {
+            opacity: 1;
+        }
+    }
+    a {
+        background: url(../img/pixel-trame.png) 0 0;
+        display: block;
+        position: relative;
+        text-decoration: none;
+    }
+    img {
+        display: block;
+        width: 100%;
+    }
+    .date {
+        color: #f2f2f2;
+        display: block;
+        font-size: .875em;
+        font-weight: bold;
+        padding: 5px;
+    }
+    .title {
+        background: rgba(255, 255, 255, .8);
+        bottom: 0;
+        color: #555;
+        display: block;
+        left: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        word-break: break-word;
+    }
+}
