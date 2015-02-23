@@ -5,4 +5,17 @@
 
 .spon-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.spon-list-item {
+    display: inline-block;
+    max-width: 280px;
+    vertical-align: middle;
+
+    img {
+        height: auto;
+        width: 100%;
+    }
 }
