@@ -40,6 +40,7 @@ $(document).ready(function() {
         prepareLazyload(windowHeight);
 
         $(window).scroll(function() {
+            console.log('executing...');
             prepareLazyload(windowHeight);
         });
     }
@@ -47,6 +48,9 @@ $(document).ready(function() {
     var prepareLazyload = function(windowHeight) {
         var scrolled = $('body').scrollTop() + windowHeight;
         var $images = $('.js-lazyload[data-src^="http"]');
+        if (!$images.length) {
+            $(window).off('scroll');
+        }
         var preQueue = [];
         var queue = [];
 

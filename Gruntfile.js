@@ -11,11 +11,9 @@ module.exports = function (grunt) {
                 files: ['sass/**/*.{scss,sass}','sass/partials/**/*.{scss,sass}'],
                 tasks: ['sass:dist', 'postcss']
             },
-            livereload: {
-                files: ['*.html', 'js/**/*.{js,json}', 'css/*.css','img/**/*.{png,jpg,jpeg,gif,webp,svg}'],
-                options: {
-                    livereload: 1337
-                }
+            js: {
+                files: ['js/src/**/*.js', 'bower_components/**/*.js'],
+                tasks: ['bower_concat', 'uglify']
             }
         },
 
@@ -65,7 +63,7 @@ module.exports = function (grunt) {
 
         browserSync: {
             bsFiles: {
-                src : ['css/**/*.css', 'js/**/*.js', '*.html']
+                src : ['css/**/*.css', 'js/*.js', '*.html']
             },
             options: {
                 watchTask: true,
@@ -75,15 +73,25 @@ module.exports = function (grunt) {
             }
         },
 
-        wiredep: {
-          task: {
-            src: ['index.html']
+        bower_concat: {
+          vendors: {
+            dest: 'js/src/vendors.js'
           }
+        },
+
+        uglify: {
+            all: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'js/vendors.min.js': ['js/src/vendors.js'],
+                    'js/script.min.js': ['js/src/script.js']
+                }
+            }
         }
-
-
     });
 
-    grunt.registerTask('default', ['wiredep', 'browserSync','sass:dist', 'watch']);
+    grunt.registerTask('default', ['bower_concat', 'uglify', 'browserSync', 'sass:dist', 'watch']);
     grunt.registerTask('prod', ['sass:prod', 'postcss']);
 };
