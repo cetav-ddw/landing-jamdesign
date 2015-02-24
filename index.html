@@ -61,29 +61,33 @@
 		</div>
 	</div>
 	<div class="section content">
-		<div class="group">
-			<ul id="container" class="results">
+		<div class="group" id="results-container">
 		</div>
 	</div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<!-- endbower -->
 
+<!-- prodScripts -->
+<script src="starfield.js"></script>
 <script src="js/script.js"></script>
 
-<script src="starfield.js"></script>
-    <script>
-		var container = document.getElementById('startfield');
-		var starfield = new Starfield();
-		starfield.initialise(container);
-		starfield.start();
 
-		function randomise() {
-			starfield.stop();
-			starfield.stars = Math.random()*1000 + 50;
-			starfield.minVelocity = Math.random()*30+5;
-			starfield.maxVelocity = Math.random()*50 + starfield.minVelocity;			
-			starfield.start();
-		}
-	</script>
+<script type="text/template" id="resultsTpl">
+	<ul id="container" class="results">
+	<% _.forEachRight(results, function(result, idx) {  %>
+		<li class="results-item">
+			<a class="image" href="<%= result.gsx$url.$t %>"><img data-src="<%= result.gsx$image.$t %>" alt="<%= result.gsx$caption.$t %>" class="js-lazyload"/>
+				<span class="title"><%= result.gsx$caption.$t %></span>
+			</a>
+			<span class="date"><%= result.gsx$date.$t %></span>
+		</li>
+	<% }); %>
+	</ul>
+</script>
+
+
 </body>
 </html>

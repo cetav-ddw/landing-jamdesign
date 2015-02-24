@@ -11,6 +11,7 @@
     "grunt-postcss": "^0.3.0",
     "grunt-sass": "^0.18.0",
     "grunt-scss-lint": "^0.3.4",
+    "grunt-wiredep": "^2.0.0",
     "load-grunt-tasks": "^2.0.0"
   }
 }

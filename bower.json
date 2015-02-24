@@ -1,0 +1,20 @@
+{
+  "name": "landing-jamdesign",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cetav-ddw/landing-jamdesign",
+  "authors": [
+    "Marcial Cambronero <mcambronero@backcountry.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "lodash": "~3.3.0"
+  }
+}

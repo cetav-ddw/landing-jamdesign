@@ -73,11 +73,17 @@ module.exports = function (grunt) {
                     baseDir: "./"
                 }
             }
+        },
+
+        wiredep: {
+          task: {
+            src: ['index.html']
+          }
         }
 
 
     });
 
-    grunt.registerTask('default', ['browserSync','sass:dist', 'watch']);
+    grunt.registerTask('default', ['wiredep', 'browserSync','sass:dist', 'watch']);
     grunt.registerTask('prod', ['sass:prod', 'postcss']);
 };
