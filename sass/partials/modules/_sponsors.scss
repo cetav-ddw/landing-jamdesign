@@ -1,18 +1,24 @@
 .sponsors {
     background: $white;
-    padding: 1em 2em;
+    padding: 1em;
+
+    @include respond-to(small) {
+        padding: 1em 2em;
+    }
 }
 
 .spon-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .spon-list-item {
     display: inline-block;
-    max-width: 280px;
+    padding: 10px 0;
     vertical-align: middle;
+    max-width: 225px
 
     img {
         height: auto;

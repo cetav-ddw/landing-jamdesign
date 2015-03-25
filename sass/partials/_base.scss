@@ -11,6 +11,13 @@
 
 body {
     background-color: #000;
-    color: rgba(21,171,195,1.0);
+    color: rgba(21,171,195,1);
     font-family: PressStart, "Bitstream Vera Sans Mono", monospace;
+}
+
+.h-section {
+	color: $white;
+	font-size: 1.75em;
+	text-align: center;
+	text-shadow: 2px 2px 0 #607B23;
 }

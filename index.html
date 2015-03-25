@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="" />
+<meta name="description" content="Game Jam 2015, proyecto de CETAV en conjunto con Fair Play Labs y el Fondo Franco-Alemán para desarrollar un prototipo de video juego." />
 
 <title>Jam Design 2015 - CETAV</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
@@ -14,8 +14,13 @@
 <body>
 <div id="startfield" class="ui-starfield js-starfield"></div>
 	<header class="section head">
+		<nav class="main-nav">
+			<a href="http://parquelalibertad.org/gamedesign/"><b>/</b>Jam Design</a>
+			<a href="feed/"><b>/</b>Feed</a>
+			<a href="demos/"><b>/</b>Demos</a>
+		</nav>
 		<div class="group">
-			<h1 class="tagline">Cambio Climatico The Game</h1>
+			<h1 class="tagline">Cambio Climatico <b>The Game</b></h1>
 
 			<div class="progress">
 			<h3 class="load-date">Del 20 de Febrero</h3>
@@ -52,16 +57,44 @@
 	<div class="sponsors">
 		<div class="group">
 			<ul class="spon-list">
-				<li class="spon-list-item"><a href="#" class="spon-list-link"><img src="img/spon-alemania.jpg" /></a></li>
-				<li class="spon-list-item"><a href="#" class="spon-list-link"><img src="img/spon-francia.jpg" /></a></li>
-				<li class="spon-list-item"><a href="#" class="spon-list-link"><img src="img/spon-fairlab.png" /></a></li>
-				<li class="spon-list-item"><a href="#" class="spon-list-link"><img src="img/spon-cetav.png" /></a></li>
-				<li class="spon-list-item"><a href="#" class="spon-list-link"><img src="img/spon-pnud.png"/></a></li>
+				<li class="spon-list-item"><img src="img/spon-alemania.jpg" /></li>
+				<li class="spon-list-item"><img src="img/spon-francia.jpg" /></li>
+				<li class="spon-list-item"><img src="img/spon-fairlab.png" /></li>
+				<li class="spon-list-item"><img src="img/spon-cetav.png" /></li>
+				<li class="spon-list-item"><img src="img/spon-pnud.png"/></li>
 			</ul>
 		</div>
 	</div>
-	<div class="section content">
-		<div class="group" id="results-container">
+	<div class="section main-content">
+		<div class="group">
+			
+			<div class="press-content">
+				<h3 class="h-section">Sobre el Jam Design</h3>
+				
+				<div class="call-out">
+					<p>Durante dos fines de semana, treinta estudiantes del Centro de Artes Visuales y Tecnología (CETAV) desarrollaron cuatro prototipos de videojuego, todos con un efoque educativo sobre el cambio climático.</p>
+
+				<p>El proyecto es financiado por el Fondo Cultural Franco-Alemán, que pretende educar a la juventud sobre la relevancia del cambio climático e impulsar a la industria de animación digital y de videojuegos en el país.</p>
+				</div>
+			</div>
+			
+			<div class="press-content">
+				<h3 class="h-section">En la prensa</h3>
+				<ul class="press-list">
+					<li><a href="http://www.san-jose.diplo.de/Vertretung/sanjose/es/06/videojuego__cambioclimatico.html"><b>Embajada Alemania</b>Desarrollo de un videojuego sobre cambio climático</a></li>
+					<li><a href="http://www.ameliarueda.com/nota/jovenes-ticos-desarrollaran-video-juego-para-combatir-el-cambio-climatico"><b>ameliarueda.com</b>Jóvenes ticos desarrollarán videojuego para combatir el cambio climático</a></li>
+					<li><a href="http://www.prensalibre.cr/Noticias/detalle/14362-estudiantes-del-cetav-desarrollaran-videojuego-sobre-cambio-climatico"><b>Prensa Libre</b>Estudiantes del Cetav desarrollarán videojuego sobre cambio climático</a></li>
+					<li><a href="http://www.prensalibre.cr/Noticias/detalle/14482-talento-tico-desarrolla-videojuego-sobre-cambio-climatico"><b>Prensa Libre</b>Talento tico desarrolla videojuego sobre cambio climático</a></li>
+					<li><a href="http://www.launion.go.cr/index.php?option=com_content&view=article&id=748:cambio-climatico-en-video-juego&catid=34:noticias&Itemid=325"><b>launion.go.cr</b>Cambio climático en vídeo juego</a></li>
+					<li><a href="http://www.bsnoticias.cr/nacionales/estudiantes-del-cetav-desarrollaran-videojuego-sobre-cambio-climatico/"><b>bsnoticias.cr</b>Estudiantes del CETAV desarrollarán videojuego sobre cambio climático</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="section closure">
+		<div class="group">
+			<img src="img/icon-heart.png" alt="Gracias!">
+			<p>Jam Design, es un proyecto hecho con muchas ganas en Costa Rica, gracias a todos los involucrados!</p>
 		</div>
 	</div>
 
@@ -69,21 +102,6 @@
 <script src="js/vendors.min.js"></script>
 <!-- project -->
 <script src="js/script.min.js"></script>
-
-
-<script type="text/template" id="resultsTpl">
-	<ul id="container" class="results">
-	<% _.forEachRight(results, function(result, idx) {  %>
-		<li class="results-item">
-			<a class="image" href="<%= result.gsx$url.$t %>"><img data-src="<%= result.gsx$image.$t %>" alt="<%= result.gsx$caption.$t %>" class="js-lazyload"/>
-				<span class="title"><%= result.gsx$caption.$t %></span>
-			</a>
-			<span class="date"><%= result.gsx$date.$t %></span>
-		</li>
-	<% }); %>
-	</ul>
-</script>
-
 
 </body>
 </html>

@@ -3,50 +3,62 @@
 	padding: 0;
 }
 
+.result-date {
+    color: $black;
+    display: block;
+    font-size: .75em;
+    font-weight: bold;
+    padding: 15px 5px 0;
+}
+
 .results-item {
 	background: #6fff00;
     display: inline-block;
     font-size: .875em;
     line-height: 1.325;
-    margin: 1%;
+    margin: 0 0 1em;
     padding: 15px;
-    vertical-align: top;
-    width: 23%;
+
+    @include respond-to(small) {
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+    }
     
+    @include respond-to(large) {
+        width: 31%;
+    }
+
     &:hover {
-        .title {
+        .result-title {
             opacity: 1;
         }
     }
-    a {
-        display: block;
-        position: relative;
-        text-decoration: none;
-    }
-    img {
-        display: block;
-        width: 100%;
-    }
-    .date {
-        color: #000;
-        display: block;
-        font-size: .75em;
-        font-weight: bold;
-        padding: 15px 5px 0;
-    }
-    .title {
-        background: rgba(255, 255, 255, .8);
-        bottom: 0;
-        color: #000;
-        display: block;
-        font-size: .75em;
-        left: 0;
-        opacity: 0;
-        overflow: hidden;
-        padding: 20px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        word-break: break-word;
-    }
+}
+
+.result-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.result-thumb {
+    display: block;
+    width: 100%;
+}
+
+.result-title {
+    background: rgba(255,255,255,.8);
+    bottom: 0;
+    color: $black;
+    display: block;
+    font-size: .75em;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    word-break: break-word;
 }

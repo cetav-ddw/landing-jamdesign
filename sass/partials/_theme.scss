@@ -1,3 +1,5 @@
-.head {
-	background: url(../img/pixel-planet.png) no-repeat fixed -50px -50px;
+@include respond-to(medium) {
+	.head {
+		background: url(../img/pixel-planet.png) no-repeat -50px 30px;
+	}
 }

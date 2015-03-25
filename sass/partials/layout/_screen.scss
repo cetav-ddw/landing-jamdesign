@@ -2,6 +2,10 @@
 	margin: 0 auto;
 	max-width: 1400px;
 	width: 90%;
+
+	.main-content & {
+		padding: 3em 0;
+	}
 }
 
 .section {

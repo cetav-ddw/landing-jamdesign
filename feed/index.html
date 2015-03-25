@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Game Jam 2015, proyecto de CETAV en conjunto con Fair Play Labs y el Fondo Franco-Alemán para desarrollar un prototipo de video juego." />
+
+<title>Jam Design 2015 - CETAV</title>
+<link href="/css/styles.css" rel="stylesheet" type="text/css" media="screen" />
+
+</head>
+<body>
+<div id="startfield" class="ui-starfield js-starfield"></div>
+	<header class="section head">
+	<nav class="main-nav">
+		<a href="http://parquelalibertad.org/gamedesign/"><b>/</b>Jam Design</a>
+		<a href="#"><b>/</b>Feed</a>
+		<a href="/demos/"><b>/</b>Demos</a>
+	</nav>
+		<div class="group">
+			<h1 class="tagline">Cambio Climatico <b>The Game</b></h1>
+
+			<div class="progress">
+			<h3 class="load-date">Del 20 de Febrero</h3>
+				<div class="progress-bar">
+					
+				  <div class="main-bar"></div>
+				  <div class="row-bar" id="r-one">
+				    <span class="sq" id="sq-1"></span>
+				    <span class="sq" id="sq-2"></span>
+				    <span class="sq" id="sq-3"></span>
+				  </div>
+				  <div class="row-bar" id="r-two">
+				    <span class="sq" id="sq-4"></span>
+				    <span class="sq" id="sq-5"></span>
+				    <span class="sq" id="sq-6"></span>
+				  </div>
+				  <div class="row-bar" id="r-three">
+				    <span class="sq" id="sq-7"></span>
+				    <span class="sq" id="sq-8"></span>
+				    <span class="sq" id="sq-9"></span>
+				  </div>
+				  <div class="row-bar" id="r-four">
+				    <span class="sq" id="sq-10"></span>
+				    <span class="sq" id="sq-11"></span>
+				    <span class="sq" id="sq-12"></span>
+				  </div>
+				  
+				</div>
+				<h3 class="load-date">Al 1 de Marzo 2015</h3>
+				<h2 class="load-title">Loading... 1 Level</h2>
+			</div>
+		</div>
+	</header>
+	<div class="sponsors">
+		<div class="group">
+			<ul class="spon-list">
+				<li class="spon-list-item"><img src="/img/spon-alemania.jpg" /></li>
+				<li class="spon-list-item"><img src="/img/spon-francia.jpg" /></li>
+				<li class="spon-list-item"><img src="/img/spon-fairlab.png" /></li>
+				<li class="spon-list-item"><img src="/img/spon-cetav.png" /></li>
+				<li class="spon-list-item"><img src="/img/spon-pnud.png"/></li>
+			</ul>
+		</div>
+	</div>
+	<div class="section content">
+		<div class="group" id="results-container">
+		</div>
+	</div>
+
+<!-- Vendors -->
+<script src="/js/vendors.min.js"></script>
+<!-- project -->
+<script src="/js/script.min.js"></script>
+
+<script type="text/template" id="resultsTpl">
+	<ul id="container" class="results">
+	<% _.forEachRight(results, function(result, idx) {  %>
+		<li class="results-item">
+			<% if(result.gsx$url.$t) { %>
+				<a class="result-link" href="<%= result.gsx$url.$t %>">
+			<% } %>
+				<img data-src="<%= result.gsx$image.$t %>" alt="<%= result.gsx$caption.$t %>" class="result-thumb js-lazyload"/>
+			<% if(result.gsx$url.$t) { %>
+					<span class="result-title"><%= result.gsx$caption.$t %></span>
+				</a>
+			<% } %>
+			<span class="result-date"><%= result.gsx$date.$t %></span>
+		</li>
+	<% }); %>
+	</ul>
+</script>
+
+
+</body>
+</html>

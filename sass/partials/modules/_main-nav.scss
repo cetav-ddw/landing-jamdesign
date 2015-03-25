@@ -1,0 +1,22 @@
+.main-nav {
+    background: url(../img/border-pattern.gif) repeat-x bottom #82A915;
+    padding: 1.5em 0 2em;
+    text-align: center;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        padding: .5em .5em 2px;
+
+        &:hover {
+            b {
+                color: $black;
+            }
+        }
+
+        b {
+            color: #00EE4B;
+            padding-right: 2px;
+        }
+    }
+}
