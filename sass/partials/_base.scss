@@ -17,7 +17,11 @@ body {
 
 .h-section {
 	color: $white;
-	font-size: 1.75em;
+	font-size: 1.125em;
 	text-align: center;
 	text-shadow: 2px 2px 0 #607B23;
+
+	@include respond-to(small) {
+		font-size: 1.75em;
+	}
 }
