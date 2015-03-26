@@ -1,0 +1,31 @@
+.demo-item {
+    background: #6fff00;
+    box-shadow: 2px 2px 2px #f2f2f2;
+    margin: 0 0 2em;
+    text-align: center;
+
+    &:hover {
+        box-shadow: 2px 2px 2px #fff;
+    }
+
+    @include respond-to(small) {
+        float: left;
+        margin-right: 5%;
+        width: 45%;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.demo-title {
+    color: $black;
+}
+
+.demos-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
